@@ -2,6 +2,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.IOException;
+
 public class PersonControler {
     private Main main;
 
@@ -83,4 +85,8 @@ public class PersonControler {
         return main;
     }
 
+    @FXML
+    public void handleSaveButton(ActionEvent actionEvent) throws IOException {
+        Main.saveToJson(main.getPersonList(), "personList");
+    }
 }
